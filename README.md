@@ -5,6 +5,7 @@ Password Generator
 ```bash
 $ go install github.com/golfz/getpass
 ```
+If you don't have Go installed, install it from [here](https://golang.org/doc/install).
 
 ## Help
 ```bash
