@@ -1,2 +1,2 @@
-# generatepassword
+# GetPass
 Password Generator
