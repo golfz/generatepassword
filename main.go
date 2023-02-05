@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"os"
 	"strconv"
 )
@@ -21,7 +22,7 @@ func main() {
 	// create -h flag to print help
 	for i, arg := range os.Args {
 		if arg == "-h" {
-
+			fmt.Println("Usage: go run main.go [-l <length>]")
 			return
 		}
 		if arg == "-l" {
