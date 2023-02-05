@@ -18,3 +18,9 @@ Usage: getpass [-l <length>] [-no-upper] [-no-lower] [-no-number] [-no-special] 
     -h            show help
 ```
 
+## Example
+```bash
+$ getpass -l 32
+cVD-B+m2RiAaQRFU!g]XcQaWMw50!Ky!
+```
+
