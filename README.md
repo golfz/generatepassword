@@ -1,7 +1,7 @@
 # GetPass
 Password Generator
 
-## Usage
+## Help
 ```bash
 $ getpass -h
 Usage: getpass [-l <length>]
