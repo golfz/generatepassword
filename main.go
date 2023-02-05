@@ -34,7 +34,13 @@ func main() {
 	// create -h flag to print help
 	for i, arg := range os.Args {
 		if arg == "-h" {
-			fmt.Println("Usage: go run main.go [-l <length>]")
+			help := `Usage: getpass [-l <length>] [-no-upper] [-no-lower] [-no-number] [-no-special]
+    -l <int>      length of password (default 16)
+    -no-upper     exclude upper case letters
+    -no-lower     exclude lower case letters
+    -no-number    exclude numbers
+    -no-special   exclude special characters`
+			fmt.Println(help)
 			return
 		}
 		if arg == "-l" {
