@@ -52,10 +52,11 @@ func main() {
 }
 
 func printHelp() {
-	fmt.Println("Usage: getpass [-l <length>] [-no-upper] [-no-lower] [-no-number] [-no-special]")
+	fmt.Println("Usage: getpass [-l <length>] [-no-upper] [-no-lower] [-no-number] [-no-special] [-h]")
 	fmt.Println("    -l <int>      length of password (default 16)")
 	fmt.Println("    -no-upper     exclude upper case letters")
 	fmt.Println("    -no-lower     exclude lower case letters")
 	fmt.Println("    -no-number    exclude numbers")
 	fmt.Println("    -no-special   exclude special characters")
+	fmt.Println("    -h            show help")
 }
