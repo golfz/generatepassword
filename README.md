@@ -9,6 +9,7 @@ $ go install github.com/golfz/getpass
 ## Help
 ```bash
 $ getpass -h
+
 Usage: getpass [-l <length>] [-no-upper] [-no-lower] [-no-number] [-no-special] [-h]
     -l <int>      length of password (default 16)
     -no-upper     exclude upper case letters
