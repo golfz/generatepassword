@@ -45,6 +45,18 @@ func main() {
 			}
 			length = iL
 		}
+		if arg == "-no-upper" {
+			noUpper = true
+		}
+		if arg == "-no-lower" {
+			noLower = true
+		}
+		if arg == "-no-number" {
+			noNumber = true
+		}
+		if arg == "-no-special" {
+			noSpecial = true
+		}
 	}
 
 	fmt.Println(generatePassword())
