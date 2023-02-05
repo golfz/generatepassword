@@ -23,13 +23,7 @@ func main() {
 	// create -h flag to print help
 	for i, arg := range os.Args {
 		if arg == "-h" {
-			help := `Usage: getpass [-l <length>] [-no-upper] [-no-lower] [-no-number] [-no-special]
-    -l <int>      length of password (default 16)
-    -no-upper     exclude upper case letters
-    -no-lower     exclude lower case letters
-    -no-number    exclude numbers
-    -no-special   exclude special characters`
-			fmt.Println(help)
+			printHelp()
 			return
 		}
 		if arg == "-l" {
@@ -55,4 +49,13 @@ func main() {
 	}
 
 	fmt.Println(password.GeneratePassword(length, !noUpper, !noLower, !noNumber, !noSpecial))
+}
+
+func printHelp() {
+	fmt.Println("Usage: getpass [-l <length>] [-no-upper] [-no-lower] [-no-number] [-no-special]")
+	fmt.Println("    -l <int>      length of password (default 16)")
+	fmt.Println("    -no-upper     exclude upper case letters")
+	fmt.Println("    -no-lower     exclude lower case letters")
+	fmt.Println("    -no-number    exclude numbers")
+	fmt.Println("    -no-special   exclude special characters")
 }
