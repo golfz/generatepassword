@@ -8,10 +8,18 @@ import (
 
 const (
 	defaultLength = 8
+	uppers        = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+	lowers        = "abcdefghijklmnopqrstuvwxyz"
+	numbers       = "0123456789"
+	specials      = "!@#$%^&*()_+"
 )
 
 var (
-	length int
+	length    int
+	noUpper   bool
+	noLower   bool
+	noNumber  bool
+	noSpecial bool
 )
 
 func init() {
