@@ -2,18 +2,9 @@ package main
 
 import (
 	"fmt"
-	"math/rand"
+	"github.com/golfz/getpass/password"
 	"os"
 	"strconv"
-	"time"
-)
-
-const (
-	defaultLength = 16
-	uppers        = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-	lowers        = "abcdefghijklmnopqrstuvwxyz"
-	numbers       = "0123456789"
-	specials      = "!@#$%^&*()-_+[:]"
 )
 
 var (
@@ -25,9 +16,7 @@ var (
 )
 
 func init() {
-	length = defaultLength
-
-	rand.Seed(time.Now().UnixNano())
+	length = password.DefaultLength
 }
 
 func main() {
@@ -65,31 +54,5 @@ func main() {
 		}
 	}
 
-	fmt.Println(generatePassword(length, !noUpper, !noLower, !noNumber, !noSpecial))
-}
-
-func generatePassword(length int, useUpper, useLower, useNumber, useSpecial bool) string {
-	var password []byte
-
-	source := ""
-
-	if useUpper {
-		source += uppers
-	}
-	if useLower {
-		source += lowers
-	}
-	if useNumber {
-		source += numbers
-	}
-	if useSpecial {
-		source += specials
-	}
-
-	for i := 0; i < length; i++ {
-		randNum := rand.Intn(len(source))
-		password = append(password, source[randNum])
-	}
-
-	return string(password)
+	fmt.Println(password.GeneratePassword(length, !noUpper, !noLower, !noNumber, !noSpecial))
 }
