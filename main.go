@@ -2,12 +2,14 @@ package main
 
 import (
 	"fmt"
+	"math/rand"
 	"os"
 	"strconv"
+	"time"
 )
 
 const (
-	defaultLength = 8
+	defaultLength = 16
 	uppers        = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 	lowers        = "abcdefghijklmnopqrstuvwxyz"
 	numbers       = "0123456789"
@@ -24,6 +26,8 @@ var (
 
 func init() {
 	length = defaultLength
+
+	rand.Seed(time.Now().UnixNano())
 }
 
 func main() {
@@ -42,4 +46,32 @@ func main() {
 			length = iL
 		}
 	}
+
+	fmt.Println(generatePassword())
+}
+
+func generatePassword() string {
+	var password []byte
+
+	source := ""
+
+	if !noUpper {
+		source += uppers
+	}
+	if !noLower {
+		source += lowers
+	}
+	if !noNumber {
+		source += numbers
+	}
+	if !noSpecial {
+		source += specials
+	}
+
+	for i := 0; i < length; i++ {
+		randNum := rand.Intn(len(source))
+		password = append(password, source[randNum])
+	}
+
+	return string(password)
 }
