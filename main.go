@@ -13,7 +13,7 @@ const (
 	uppers        = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 	lowers        = "abcdefghijklmnopqrstuvwxyz"
 	numbers       = "0123456789"
-	specials      = "!@#$%^&*()_+"
+	specials      = "!@#$%^&*()-_+[:]"
 )
 
 var (
@@ -65,24 +65,24 @@ func main() {
 		}
 	}
 
-	fmt.Println(generatePassword())
+	fmt.Println(generatePassword(length, !noUpper, !noLower, !noNumber, !noSpecial))
 }
 
-func generatePassword() string {
+func generatePassword(length int, useUpper, useLower, useNumber, useSpecial bool) string {
 	var password []byte
 
 	source := ""
 
-	if !noUpper {
+	if useUpper {
 		source += uppers
 	}
-	if !noLower {
+	if useLower {
 		source += lowers
 	}
-	if !noNumber {
+	if useNumber {
 		source += numbers
 	}
-	if !noSpecial {
+	if useSpecial {
 		source += specials
 	}
 
